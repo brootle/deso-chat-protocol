@@ -9,6 +9,9 @@ import {
 } from "./constants";
 import { Conversation } from "./types";
 
+import filterXSS from "xss";
+import Autolinker from "autolinker";
+
 export const copyTextToClipboard = async (text: string) => {
   return navigator.clipboard.writeText(text);
 };
@@ -89,4 +92,12 @@ export const checkTransactionCompleted = (hashHex: string): Promise<void> => {
         .catch(() => reject(new Error("Error when getting transaction")));
     }, 150);
   });
+};
+
+export const replaceAtMentionsWithLinks = (text: string) => {
+  let filteredText = filterXSS(text); // always filter text when using dangerouslySetInnerHTML
+
+  filteredText = filteredText.replace(/(https?:\/\/.*?\.(?:png|jpe?g|gif|webp)(.*))(\w|$)/ig, "<br><img style='max-width:100%;overflow:hidden;' src='$1'>");
+
+  return Autolinker.link(filteredText.replace(/@([a-z\d_]+)/ig, `<a target='_blank' href='${process.env.REACT_APP_PROFILE_URL}/u/$1'>@$1</a>`)); 
 };

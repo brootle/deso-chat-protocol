@@ -44,7 +44,7 @@ export const SendMessageButtonAndInput = ({
               Press Shift + Return for paragraph breaks
             </p>
             <Textarea
-              className="p-2 pr-[200px] text-blue-100 bg-black/70 border-blue-gray-100 focus:shadow-none border-none focus:border-solid flex-1"
+              className="text-base p-2 text-blue-100 bg-black/70 border-blue-gray-100 focus:shadow-none border-none focus:border-solid flex-1"
               label="What's on your mind?"
               onChange={(e) => {
                 setMessageToSend(e.target.value);
@@ -75,7 +75,7 @@ export const SendMessageButtonAndInput = ({
           />
         </div>
       </div>
-      <div className="flex h-[100px] items-center">
+      {/* <div className="flex h-[100px] items-center">
         <Button
           onClick={sendMessage}
           className="bg-[#ffda59] ml-4 px-2 py-2 text-[#6d4800] center rounded-full hover:shadow-none normal-case text-lg"
@@ -87,7 +87,7 @@ export const SendMessageButtonAndInput = ({
             </div>
           </div>
         </Button>
-      </div>
+      </div> */}
     </div>
   );
 };

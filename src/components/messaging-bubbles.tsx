@@ -21,6 +21,8 @@ import { shortenLongWord } from "./search-users";
 import ClipLoader from "react-spinners/ClipLoader";
 import ReactLinkify from "react-linkify";
 
+import { replaceAtMentionsWithLinks } from "../utils/helpers";
+
 export interface MessagingBubblesProps {
   conversations: ConversationMap;
   conversationPublicKey: string;
@@ -303,12 +305,19 @@ export const MessagingBubblesAndAvatar: FC<MessagingBubblesProps> = ({
                 <div
                   className={`${senderStyles} mt-auto mb-2 md:mb-5 py-2 px-2 md:px-4 text-white break-words inline-flex text-left relative items-center`}
                 >
-                  <div
+                  {/* <div
                     className="text-md break-words whitespace-pre-wrap"
                     id="message-text"
                   >
                     <ReactLinkify>{messageToShow}</ReactLinkify>
+                  </div>                   */}
+                  <div
+                    className="text-md break-words whitespace-pre-wrap"
+                    // id="message-text"
+                    dangerouslySetInnerHTML={{__html: replaceAtMentionsWithLinks(messageToShow)}}
+                  >
                   </div>
+
                 </div>
               </div>
               {IsSender && messagingDisplayAvatarAndTimestamp}

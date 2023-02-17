@@ -190,7 +190,7 @@ export const MessagingGroupMembers: FC<{
 
   return (
     <div className="flex justify-start ml-2">
-      {pubKeys &&
+      {/* {pubKeys &&
         pubKeys.map((pubKey) => (
           <Tooltip
             key={pubKey}
@@ -206,9 +206,9 @@ export const MessagingGroupMembers: FC<{
               />
             </div>
           </Tooltip>
-        ))}
+        ))} */}
 
-      {hiddenMembersNum > 0 && (
+      {/* {hiddenMembersNum > 0 && (
         <Tooltip content={`${hiddenMembersNum} members more in this group`}>
           <div className="-ml-2 rounded-full bg-indigo-50 w-[25px] h-[25px] text-center text-[10px] font-black flex items-center justify-center">
             {hiddenMembersNum > MAX_MEMBERS_TO_REQUEST_IN_GROUP
@@ -216,7 +216,13 @@ export const MessagingGroupMembers: FC<{
               : `+${hiddenMembersNum}`}
           </div>
         </Tooltip>
-      )}
+      )} */}
+
+      <Tooltip content={`${allPubKeys.length} members in this group`}>
+        <div className="-ml-2 rounded-full bg-indigo-50 w-[25px] h-[25px] text-center text-[10px] font-black flex items-center justify-center">
+          {allPubKeys.length}
+        </div>
+      </Tooltip>      
     </div>
   );
 };

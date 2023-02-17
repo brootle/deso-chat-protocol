@@ -110,7 +110,7 @@ export const MessagingDisplayAvatar: FC<{
     >
       <img
         src={profilePicUrl}
-        style={{ height: `${diameter}px`, width: `${diameter}px` }}
+        style={{ height: `${diameter}px`, width: `${diameter}px`, borderRadius:`${10}%` }}
         className={`w-12 h-12 bg-white bg-no-repeat bg-center bg-cover rounded-full ${borderColor}`}
         alt={publicKey}
         title={publicKey}

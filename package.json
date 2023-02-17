@@ -14,6 +14,7 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "assert": "^2.0.0",
+    "autolinker": "^4.0.0",
     "axios": "^1.2.3",
     "bignumber.js": "^9.1.1",
     "buffer": "^6.0.3",
@@ -23,6 +24,7 @@
     "elliptic": "^6.5.4",
     "ethers": "^5.7.2",
     "hdkey": "github:deso-protocol/hdkey",
+    "lodash": "^4.17.21",
     "material-color-hash": "^0.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -35,8 +37,10 @@
     "sha256": "^0.2.0",
     "stream-browserify": "^3.0.0",
     "tslib": "^2.4.1",
+    "twitter-text": "^3.1.0",
     "typescript": "4.5.5",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "xss": "^1.0.14"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -76,6 +80,7 @@
     "@types/lodash": "^4.14.191",
     "@types/react-linkify": "^1.0.1",
     "@types/sha256": "^0.2.0",
+    "@types/twitter-text": "^3.1.5",
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",

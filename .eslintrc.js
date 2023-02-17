@@ -17,7 +17,8 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint"],
   rules: {
-    "linebreak-style": ["error", "unix"],
+    // "linebreak-style": ["error", "unix"],
+    "linebreak-style": ["error", "windows"],
     quotes: ["error", "double"],
     semi: ["error", "always"],
     "react-hooks/exhaustive-deps": [0],

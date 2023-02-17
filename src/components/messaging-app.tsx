@@ -604,7 +604,7 @@ export const MessagingApp: FC = () => {
         !isLoadingUser &&
         !loading && (
           <div className="flex h-full">
-            <Card className="w-full md:w-[400px] border-r border-blue-800/30 bg-black/40 rounded-none border-solid shrink-0">
+            <Card className="w-full md:w-[310px] border-r border-blue-800/30 bg-black/40 rounded-none border-solid shrink-0">
               <MessagingConversationAccount
                 rehydrateConversation={rehydrateConversation}
                 onClick={async (key: string) => {
@@ -636,7 +636,7 @@ export const MessagingApp: FC = () => {
             </Card>
 
             <div
-              className={`w-full md:w-[calc(100vw-400px)] bg-[#050e1d] md:ml-0 md:z-auto ${
+              className={`w-full bg-[#050e1d] md:ml-0 md:z-auto ${
                 selectedConversationPublicKey ? "ml-[-100%] z-50" : ""
               }`}
             >
