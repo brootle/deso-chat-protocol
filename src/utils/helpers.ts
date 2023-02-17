@@ -101,5 +101,5 @@ export const replaceAtMentionsWithLinks = (text: string) => {
 
   filteredText = filteredText.replace(/(https?:\/\/.*?\.(?:png|jpe?g|gif|webp))/ig, "<br><img style='max-width:100%;overflow:hidden;' src='$1'>");
 
-  return Autolinker.link(filteredText.replace(/@([a-z\d_]+)/ig, `<a target='_blank' href='${process.env.REACT_APP_PROFILE_URL}/u/$1'>@$1</a>`)); 
+  return Autolinker.link(filteredText.replace(/ @([a-z\d_]+)/ig, ` <a class='usertag' target='_blank' href='${process.env.REACT_APP_PROFILE_URL}/u/$1'>@$1</a>`)); 
 };
