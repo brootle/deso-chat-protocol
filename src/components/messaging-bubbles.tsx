@@ -312,7 +312,7 @@ export const MessagingBubblesAndAvatar: FC<MessagingBubblesProps> = ({
                     <ReactLinkify>{messageToShow}</ReactLinkify>
                   </div>                   */}
                   <div
-                    className="text-md break-words whitespace-pre-wrap"
+                    className="text-md break-words whitespace-pre-wrap message"
                     // id="message-text"
                     dangerouslySetInnerHTML={{__html: replaceAtMentionsWithLinks(messageToShow)}}
                   >

@@ -97,7 +97,9 @@ export const checkTransactionCompleted = (hashHex: string): Promise<void> => {
 export const replaceAtMentionsWithLinks = (text: string) => {
   let filteredText = filterXSS(text); // always filter text when using dangerouslySetInnerHTML
 
-  filteredText = filteredText.replace(/(https?:\/\/.*?\.(?:png|jpe?g|gif|webp)(.*))(\w|$)/ig, "<br><img style='max-width:100%;overflow:hidden;' src='$1'>");
+  //filteredText = filteredText.replace(/(https?:\/\/.*?\.(?:png|jpe?g|gif|webp)(.*))(\w|$)/ig, "<br><img style='max-width:100%;overflow:hidden;' src='$1'>");
+
+  filteredText = filteredText.replace(/(https?:\/\/.*?\.(?:png|jpe?g|gif|webp))/ig, "<br><img style='max-width:100%;overflow:hidden;' src='$1'>");
 
   return Autolinker.link(filteredText.replace(/@([a-z\d_]+)/ig, `<a target='_blank' href='${process.env.REACT_APP_PROFILE_URL}/u/$1'>@$1</a>`)); 
 };

@@ -108,6 +108,17 @@ textarea:not(:focus) ~ label::after {
   text-decoration: underline;
 } */
 
+.message img{
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  display: block;
+  border: none;
+  max-height: 50vh;
+  max-width: 100%;
+  height: auto;
+}
+
 input::placeholder {
   font-size: 0.875rem;
   color: #607d8a !important;
