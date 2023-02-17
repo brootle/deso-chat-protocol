@@ -40,9 +40,9 @@ export const SendMessageButtonAndInput = ({
       <div className="flex-1">
         <div className="hidden md:block relative">
           <div className="relative">
-            <p className="text-left text-blue-300/40 mb-3 text-xs">
+            {/* <p className="text-left text-blue-300/40 mb-3 text-xs">
               Press Shift + Return for paragraph breaks
-            </p>
+            </p> */}
             <Textarea
               className="text-base p-2 text-blue-100 bg-black/70 border-blue-gray-100 focus:shadow-none border-none focus:border-solid flex-1"
               label="What's on your mind?"
@@ -75,8 +75,8 @@ export const SendMessageButtonAndInput = ({
           />
         </div>
       </div>
-      {/* <div className="flex h-[100px] items-center">
-        <Button
+      <div className="flex h-[100px] items-center">
+        {/* <Button
           onClick={sendMessage}
           className="bg-[#ffda59] ml-4 px-2 py-2 text-[#6d4800] center rounded-full hover:shadow-none normal-case text-lg"
         >
@@ -86,8 +86,17 @@ export const SendMessageButtonAndInput = ({
               <img src="/assets/send.png" width={28} alt="send" />
             </div>
           </div>
+        </Button> */}
+
+        <Button  
+          onClick={sendMessage}
+          className="ml-2 inline-flex items-center justify-center rounded-lg px-4 py-3 transition duration-500 ease-in-out text-white bg-blue-500 hover:bg-blue-400 focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="h-6 w-6 transform rotate-90">
+              <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path>
+            </svg>
         </Button>
-      </div> */}
+        
+      </div>
     </div>
   );
 };
