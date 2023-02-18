@@ -129,7 +129,7 @@ export const MessagingConversationAccount: FC<{
                         diameter={50}
                         classNames="mx-2"
                       />
-                      <div className="w-[calc(100%-70px)] text-left">
+                      <div className="w-[calc(100%-70px)] text-left relative">
                         <header className="flex items-center justify-between">
                           <div className="text-left ml-2 text-blue-100 font-semibold">
                             {isDM && chatName ? "@" : ""}
@@ -188,8 +188,10 @@ export const MessagingGroupMembers: FC<{
   const pubKeys = allPubKeys.slice(0, maxMembersShown);
   const hiddenMembersNum = allPubKeys.slice(maxMembersShown).length;
 
+  const membersIndicator = allPubKeys.length > 1 ? "members" : "member";
+
   return (
-    <div className="flex justify-start ml-2">
+    <div className="flex justify-start absolute top-[-10px] right-[-7px]">
       {/* {pubKeys &&
         pubKeys.map((pubKey) => (
           <Tooltip
@@ -218,9 +220,9 @@ export const MessagingGroupMembers: FC<{
         </Tooltip>
       )} */}
 
-      <Tooltip content={`${allPubKeys.length} members in this group`}>
-        <div className="-ml-2 rounded-full bg-indigo-50 w-[25px] h-[25px] text-center text-[10px] font-black flex items-center justify-center">
-          {allPubKeys.length}
+      <Tooltip content={`${allPubKeys.length} ${membersIndicator} in this group`}>
+        <div className="-ml-2 pl-1 pr-1 rounded bg-blue-800 text-blue-100  h-[17px] text-center text-[10px] flex items-center justify-center">
+          {allPubKeys.length} {membersIndicator}
         </div>
       </Tooltip>      
     </div>

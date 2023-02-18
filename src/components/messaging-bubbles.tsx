@@ -197,6 +197,12 @@ export const MessagingBubblesAndAvatar: FC<MessagingBubblesProps> = ({
     onScroll(decrypted);
   };
 
+  const options = {
+    formatHref: {
+      mention: (href: any) => "https://example.com/profiles" + href,
+    },
+  };
+   
   return (
     <div
       className="h-full flex flex-col-reverse custom-scrollbar px-2 md:px-4 md:overflow-y-auto"
@@ -311,6 +317,7 @@ export const MessagingBubblesAndAvatar: FC<MessagingBubblesProps> = ({
                   >
                     <ReactLinkify>{messageToShow}</ReactLinkify>
                   </div>                   */}
+                  
                   <div
                     className="text-md break-words whitespace-pre-wrap message"
                     // id="message-text"
